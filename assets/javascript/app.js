@@ -91,13 +91,13 @@ var questions = [
   },
 
   {
-    question: "Who is the Elite 4 member that specializes in ghost-type Pokémon?"
+    question: "Who is the Elite 4 member that specializes in ghost-type Pokémon?",
     answers: ["Lorelei","Bruno","Agatha","Lance"],
     correct: 3
   },
 
   {
-    question: "Who is the Elite 4 member that specializesin ice-type Pokémon?"
+    question: "Who is the Elite 4 member that specializesin ice-type Pokémon?",
     answers: ["Lorelei","Bruno","Agatha","Lance"],
     correct: 1
   }
