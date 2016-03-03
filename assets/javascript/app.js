@@ -26,6 +26,7 @@ $(document).ready(function(){
   function promptQuestions(){
     document.querySelector("#results").innerHTML = "";
     //I can't believe this part actually worked.
+    //Random function makes an array in which you can use jQuery Search functions.
     var choiceArray = [];
     $("#choices").empty();
     randomQuestion = questions[Math.floor(Math.random() * questions.length)];
@@ -36,7 +37,6 @@ $(document).ready(function(){
       $("#choices").append("<p><span id = q" + i + ">" + '<img id="placeholder" width="20" height="20" src="assets/images/pokeball.jpg" /> ' + choiceArray[i] + "</span></p>");
         $("#q" + i).click(function(){
         console.log(this);
-        // console.log(randomQuestion.correct-1);
         if (this.id[1] == randomQuestion.correct-1){
           correct.play();
           document.querySelector("#results").innerHTML = "You are correct!";

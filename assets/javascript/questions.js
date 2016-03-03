@@ -91,7 +91,7 @@ var questions     = [
   },
 
   {
-    question: "Who is the Elite 4 member that specializesin ice-type Pokémon?",
+    question: "Who is the Elite 4 member that specializes in ice-type Pokémon?",
     answers: ["Lorelei","Bruno","Agatha","Lance"],
     correct: 1
   },
@@ -100,6 +100,18 @@ var questions     = [
     question: "What is Caterpie's first evolution?",
     answers: ["Metapod","Butterfree","Caterpee","Gollum"],
     correct: 1
-  }
+  },
+
+  {
+    question: "Which of the following is NOT a starter Pokémon?",
+    answers: ["Bulbasaur", "Charmander","Squirtle","Mew"],
+    correct: 4
+  },
+
+  {
+    question: "Which of the following is NOT a type of Pokéball?",
+    answers: ["Super Ball", "Master Ball", "Ultimate Ball", "Ultra Ball"],
+    correct: 3
+  },
 
 ];
