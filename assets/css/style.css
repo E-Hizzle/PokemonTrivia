@@ -23,6 +23,8 @@ footer {
   top: 100px;
   bottom: 100px;
   height: 500px;
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
 }
 
 #logo {
@@ -33,4 +35,42 @@ footer {
 #dancingTrio {
   width: 400px;
   height: auto;
+}
+
+#losses {
+  float: right;
+}
+
+#question {
+  text-align: center;
+}
+
+#timer {
+  font-size: 36px;
+  text-align: center;
+}
+
+
+#q0:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;
+}
+
+#q1:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;
+}
+
+#q2:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;  
+}
+
+#q3:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;  
 }

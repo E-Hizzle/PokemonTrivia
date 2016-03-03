@@ -18,7 +18,13 @@ var questions = [
   },
 
   {
-    question: "Besides being a fire type, what is the other type is Charizard?",
+    question: "What is Ash's rival's name?",
+    answers: ["Greg","Al","Mariah","Gary",],
+    correct: 4
+  },
+
+  {
+    question: "Besides being a fire type, what is Charizard's other type?",
     answers: ["Fighting","Dragon","Flying","He's only one type, bruh."],
     correct: 3
   },
@@ -61,19 +67,19 @@ $(document).ready(function(){
     answer = randomQuestion.correct
     document.querySelector("#question").innerHTML = randomQuestion.question;
     for (i=0; i<choiceArray.length; i++){
-      $("#choices").append("<p><span id = q" + i + ">" + choiceArray[i] + "</span></p>");
+      $("#choices").append("<p><span id = q" + i + ">" + '<img id="placeholder" width="20" height="20" src="assets/images/pokeball.jpg" /> ' + choiceArray[i] + "</span></p>");
         $("#q" + i).click(function(){
-        // console.log(this.id[1]);
+        console.log(this);
         // console.log(randomQuestion.correct-1);
         if (this.id[1] == randomQuestion.correct-1){
-          alert("correct!")
+          alert("CORRECT!");
           wins++
           document.querySelector("#wins").innerHTML = "Wins: " + wins;
           promptQuestions();
           time = 31;
         }
         else{
-          alert("INCORRECT.")
+          alert("INCORRECT!");
           losses++
           document.querySelector("#losses").innerHTML = "Losses: " + losses;
           promptQuestions();
