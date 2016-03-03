@@ -1,10 +1,11 @@
 var entryMusic    = new Audio("assets/music/entryMusic.mp3")
 var questionMusic = new Audio("assets/music/question2.wav")
-var winner = new Audio("assets/music/winner.mp3")
+var correct       = new Audio("assets/music/correct.wav")
+var incorrect     = new Audio("assets/music/incorrect.wav")
 var wins          = 0;
 var losses        = 0;
 var timer         = 0;
-var questions = [
+var questions     = [
 
   {
     question: "What was Ash's first Pokémon?",
@@ -122,6 +123,7 @@ $(document).ready(function(){
   }); //End of click function
 
   function promptQuestions(){
+    document.querySelector("#results").innerHTML = "";
     //I can't believe this part actually worked.
     var choiceArray = [];
     $("#choices").empty();
@@ -135,18 +137,26 @@ $(document).ready(function(){
         console.log(this);
         // console.log(randomQuestion.correct-1);
         if (this.id[1] == randomQuestion.correct-1){
+          correct.play();
           document.querySelector("#results").innerHTML = "You are correct!";
           wins++
           document.querySelector("#wins").innerHTML = "Wins: " + wins;
+          setTimeout(go, 1000)
+          function go(){
           promptQuestions();
-          time = 31;
+          time = 21;
+          };
         }
         else{
+          incorrect.play();
           document.querySelector("#results").innerHTML = "You are incorrect!";
           losses++
           document.querySelector("#losses").innerHTML = "Losses: " + losses;
+          setTimeout(go, 1000)
+          function go(){
           promptQuestions();
           time = 21;
+          };
         };
     });
     };
@@ -154,15 +164,13 @@ $(document).ready(function(){
 
   function timer(){
     var timing = setInterval(timer, 1000);
-    // var time = 30;
     function timer(){
       time--;
       document.querySelector("#timer").innerHTML = "Time remaining: " + time + " seconds.";
       if (time == 0){
-        // alert("Time's up!");
         time = 21;
         losses++;
-        alert("Time's up!")
+          document.querySelector("#results").innerHTML = "You are too slow!";
         timer();
         promptQuestions();
         document.querySelector("#losses").innerHTML = "Losses: " + losses;
