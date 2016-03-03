@@ -1,5 +1,6 @@
 var entryMusic    = new Audio("assets/music/entryMusic.mp3")
-var questionMusic = new Audio("assets/music/question.mp3")
+var questionMusic = new Audio("assets/music/question.wav")
+var questionMusic2 = new Audio("assets/music/question2.wav")
 var wins          = 0;
 var losses        = 0;
 var timer         = 0;
@@ -41,6 +42,12 @@ var questions = [
     correct: 1
   },
 
+  {
+    question: "Dratini is what type of Pokémon?",
+    answers: ["Flying","Water","Dragon","Fire"],
+    correct: 3
+  },
+
 ];
 
 $(document).ready(function(){
@@ -51,11 +58,15 @@ $(document).ready(function(){
     entryMusic.pause();
     questionMusic.play();
     time = 30;
-    timer();
-    promptQuestions();
-    $(".topPanel").hide();
-    $("#gamePanel").show();
-    $(".dancingTrio").hide();
+    questionMusic.onended = function(){
+      timer();
+      promptQuestions();
+      $(".topPanel").hide();
+      $("#gamePanel").show();
+      $(".dancingTrio").hide();
+      questionMusic2.play();
+    }
+
   }); //End of click function
 
   function promptQuestions(){
@@ -72,14 +83,14 @@ $(document).ready(function(){
         console.log(this);
         // console.log(randomQuestion.correct-1);
         if (this.id[1] == randomQuestion.correct-1){
-          alert("CORRECT!");
+          alert("Correct!");
           wins++
           document.querySelector("#wins").innerHTML = "Wins: " + wins;
           promptQuestions();
           time = 31;
         }
         else{
-          alert("INCORRECT!");
+          alert("Incorrect!");
           losses++
           document.querySelector("#losses").innerHTML = "Losses: " + losses;
           promptQuestions();
@@ -99,7 +110,9 @@ $(document).ready(function(){
         // alert("Time's up!");
         time = 31;
         losses++;
+        alert("Time's up!")
         timer();
+        promptQuestions();
         document.querySelector("#losses").innerHTML = "Losses: " + losses;
       }; 
     };
