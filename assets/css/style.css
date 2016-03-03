@@ -32,6 +32,10 @@ footer {
   height: auto;
 }
 
+#correct {
+  text-align: center;
+}
+
 #dancingTrio {
   width: 400px;
   height: auto;
@@ -42,6 +46,10 @@ footer {
 }
 
 #question {
+  text-align: center;
+}
+
+#results {
   text-align: center;
 }
 

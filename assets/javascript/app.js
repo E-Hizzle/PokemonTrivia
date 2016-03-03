@@ -1,6 +1,6 @@
 var entryMusic    = new Audio("assets/music/entryMusic.mp3")
-var questionMusic = new Audio("assets/music/question.wav")
-var questionMusic2 = new Audio("assets/music/question2.wav")
+var questionMusic = new Audio("assets/music/question2.wav")
+var winner = new Audio("assets/music/winner.mp3")
 var wins          = 0;
 var losses        = 0;
 var timer         = 0;
@@ -48,6 +48,60 @@ var questions = [
     correct: 3
   },
 
+  {
+    question: "Where is Ash from?",
+    answers: ["Pewter City","Pallet Town","Cerulean City","Viridian Forest"],
+    correct: 2
+  },
+
+  {
+    question: "Who is the leader of the gym in Pewter City?",
+    answers: ["Misty","Lance","Morty","Brock"],
+    correct: 4
+  },
+
+  {
+    question: "Who is the gym leader at Cerulean City?",
+    answers: ["Ash","Misty","Nurse Joy","Lance"],
+    correct: 2
+  },
+
+  {
+    question: "If you enter any Pokémon Center, who will you be greeted by?",
+    answers: ["Nurse Joy","Nurse Jenny","Nurse Crystal","Nurse Kevorkian"],
+    correct: 1
+  },
+
+  {
+    question: "Uh oh! You committed a Pokécrime, who's taking your Pokébutt to Pokéjail?",
+    answers: ["Officer Brock","Officer Jenny","Officer Lance","Paul Blart"],
+    correct: 2
+  },
+
+  {
+    question: "Who is the Elite 4 member that specializes in dragon-Type Pokémon?",
+    answers: ["Lorelei","Bruno","Agatha","Lance"],
+    correct: 4
+  },
+
+  {
+    question: "Who is the Elite 4 member that specializes in fighting-type Pokémon?",
+    answers: ["Lorelei","Bruno","Agatha","Lance"],
+    correct: 2
+  },
+
+  {
+    question: "Who is the Elite 4 member that specializes in ghost-type Pokémon?"
+    answers: ["Lorelei","Bruno","Agatha","Lance"],
+    correct: 3
+  },
+
+  {
+    question: "Who is the Elite 4 member that specializesin ice-type Pokémon?"
+    answers: ["Lorelei","Bruno","Agatha","Lance"],
+    correct: 1
+  }
+
 ];
 
 $(document).ready(function(){
@@ -57,15 +111,13 @@ $(document).ready(function(){
   $("#startButton").on("click", function(){
     entryMusic.pause();
     questionMusic.play();
-    time = 30;
-    questionMusic.onended = function(){
-      timer();
-      promptQuestions();
-      $(".topPanel").hide();
-      $("#gamePanel").show();
-      $(".dancingTrio").hide();
-      questionMusic2.play();
-    }
+    questionMusic.loop= true;
+    time = 20;
+    timer();
+    promptQuestions();
+    $(".topPanel").hide();
+    $("#gamePanel").show();
+    $(".dancingTrio").hide();
 
   }); //End of click function
 
@@ -83,18 +135,18 @@ $(document).ready(function(){
         console.log(this);
         // console.log(randomQuestion.correct-1);
         if (this.id[1] == randomQuestion.correct-1){
-          alert("Correct!");
+          document.querySelector("#results").innerHTML = "You are correct!";
           wins++
           document.querySelector("#wins").innerHTML = "Wins: " + wins;
           promptQuestions();
           time = 31;
         }
         else{
-          alert("Incorrect!");
+          document.querySelector("#results").innerHTML = "You are incorrect!";
           losses++
           document.querySelector("#losses").innerHTML = "Losses: " + losses;
           promptQuestions();
-          time = 31;
+          time = 21;
         };
     });
     };
@@ -108,7 +160,7 @@ $(document).ready(function(){
       document.querySelector("#timer").innerHTML = "Time remaining: " + time + " seconds.";
       if (time == 0){
         // alert("Time's up!");
-        time = 31;
+        time = 21;
         losses++;
         alert("Time's up!")
         timer();
@@ -117,6 +169,7 @@ $(document).ready(function(){
       }; 
     };
   }; //end of timer
+
 });
 
 
