@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Trivia</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+
+
+
+<!-- Container -->
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+</div>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+<!-- jumbotron -->
+<div class="topPanel">
+<div class="panel panel-danger">
+  <div class="panel-body">
+    <img src="assets/images/logo.jpg" id="logo">
+    <p>Want to be the very best?</p>
+    <p>
+      <a class="btn btn-success" id="startButton">Click to play!</a>
+    </p>
+  </div>
+</div>
+</div>
+<!-- jumbotron -->
+
+<!-- Dancing Trio -->
+<div class="dancingTrio">
+<center>
+<p>
+<img src="assets/images/dancingTrio.gif" id="dancingTrio">
+</p>
+</center>
+</div>
+<!-- Dancing Trio -->
+
+<!-- Game -->
+<div class="panel panel-danger" id="gamePanel">
+  <div class="panel-heading">
+    <h3 class="panel-title" align="middle">Good luck!</h3>
+  </div>
+  <div class="panel-body">
+    <div id="timer">Time remaining: 30 seconds.</div><br>
+    <div id="wins">Wins: 0</div>
+    <div id="losses">Losses: 0</div><br>
+    <div id="question">Question:</div><br>
+    <div id="choices"></div>
+  </div>
+
+
+
+</div>
+<!-- Game -->
+
+</div>
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+</div>
+<!-- Container -->
+
+<script type="text/javascript" src="assets/javascript/app.js">
+</script>
+<footer>
+&copy;Eric Ho
+</footer>
+</body>
+</html>
+<!-- 
+
+Only one question will be shown at a time.
+The time limit will apply to each question, and when the time runs out, the game will show a screen with the correct answer, and then move on to the next question without user input.
+If the user chooses the correct answer, the game will show a screen letting them know the answer was correct, and then move on to the next question without user input.
+If the user chooses the incorrect answer, the game will show a screen with the correct answer, and then move on to the next question without user input.
+On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
+
+ -->

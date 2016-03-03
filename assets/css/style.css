@@ -1,0 +1,36 @@
+body {
+  background-image: url("../images/background.jpg");
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-size: auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+.topPanel {
+  height: 280px;
+  text-align: center;
+}
+
+#gamePanel {
+  position: relative;
+  top: 100px;
+  bottom: 100px;
+  height: 500px;
+}
+
+#logo {
+  width: 300px;
+  height: auto;
+}
+
+#dancingTrio {
+  width: 400px;
+  height: auto;
+}
