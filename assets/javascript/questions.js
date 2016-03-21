@@ -114,4 +114,10 @@ var questions     = [
     correct: 3
   },
 
+  {
+    question: "What is the final evolution of Gastly?",
+    answers: ["Gengar","Haunter","Hypno","Alakazam"],
+    correct: 1
+  }
+
 ];

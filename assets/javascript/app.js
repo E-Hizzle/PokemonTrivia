@@ -59,7 +59,7 @@ $(document).ready(function(){
           time = 21;
           };
         };
-    });
+      });
     };
   }; //end of promptQuestions
 
@@ -78,5 +78,4 @@ $(document).ready(function(){
       }; 
     };
   }; //end of timer
-
 });
