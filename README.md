@@ -10,10 +10,15 @@ http://pokemon-trivia.herokuapp.com/
 </span>
 </p>
 
-#Languages used:
+#Description:
+Trivia game that consists of various types of questions based on the Pokémon T.V. show as well as the videogames.
+
+#Languages and API's used:
 
 * HTML5
 * CSS3
 * Bootstrap
 * Javascript
 * jQuery
+* Google Fonts API
+* 15 years of playing Pokémon
